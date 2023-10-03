@@ -1,3 +1,4 @@
 #!/usr/bin/python3
-for char in [a for a in range(97, 122) if a != 101 and a != 113]:
-    print(chr(char), end='')
+for char in range(97, 122):
+    if chr(char) is not 101 and chr(char) is not 113:
+        print("{}".format(chr(char)), end='')
