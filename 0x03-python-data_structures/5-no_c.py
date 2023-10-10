@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 def no_c(my_string):
-    if my_string:
+    if len(my_string) != 0:
         new_string = ''
         for char in my_string:
             if char == 'c' or char == 'C':
                 continue
             else:
                 new_string += char
-        return new_string
+        my_string = new_string
+        return my_string
