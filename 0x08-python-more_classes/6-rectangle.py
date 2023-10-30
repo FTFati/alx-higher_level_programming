@@ -1,14 +1,18 @@
 #!/usr/bin/python3
-''' class Rectangle that defines a rectangle'''
+''' class Rectangle that defines a rectangle by'''
 
 
 class Rectangle:
-    '''A Rectangle class with attributes width and height, and
-    methods area, perimeter, print, str, and repr'''
+    '''A Rectangle class with attributes width and height,
+    methods area, perimeter, print, str, repr, and del, and
+    class attribute number_of_instances that keeps track of # of instances'''
+
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -44,6 +48,10 @@ class Rectangle:
             if i is not self.__height - 1:
                 total += "\n"
         return total
+
+    def __del__(self):
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
 
     def area(self):
         return self.__width * self.__height
