@@ -3,7 +3,8 @@
 exactly an instance of the specified class'''
 
 
-def is_same_class(obj, a_class):
-    '''function'''
+def is_kind_of_class(obj, a_class):
+    '''Method that return True if an object is
+    an instance of a class that inherited from'''
 
-    return type(obj) is a_class
+    return isinstance(obj, a_class)
